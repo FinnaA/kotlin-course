@@ -9,7 +9,7 @@ fun mainlesson05() {
     val soundEnds = soundBegin * (coeff ?: 0.5)
     println(soundEnds)
 
-// задача про стоимость груза
+//   задача про стоимость груза
     val shippingCost: Double = 100.00
     val cargoValue: Double? = null       // может быть null
     val insuranceCoeff: Double = 0.005
@@ -20,7 +20,7 @@ fun mainlesson05() {
 
 
 //задача про давление
-    val pressure: Int? // но может быть null
+    val pressure: Int? = 100 // но может быть null
     val errorMessage: String = "Данные потеряны"
     val newPressure = pressure ?: errorMessage
 
