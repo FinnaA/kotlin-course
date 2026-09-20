@@ -16,7 +16,6 @@ fun mainlesson05() {
     val finalCargoValue = cargoValue ?: 50.0
     val insuranceCost = finalCargoValue * insuranceCoeff
     val fullCost = shippingCost + insuranceCost
-    println(fullCost)
 
 
 //задача про давление
