@@ -1,5 +1,7 @@
 package com.stimmax.lessons.lesson13.homeworks
 
+
+
 fun main() {
 
 
@@ -232,12 +234,10 @@ fun main() {
 
     val reportWithoutSkipped = fullTestReport.filterNot { it.value == "skipped" }
 
-    println(reportWithoutSkipped) // Выведет: {testLogin=passed}
+    println(reportWithoutSkipped)
 
 
-    // 19Копия конфигураций с удалением нескольких записей
-
-
+// 19 Копия конфигураций с удалением нескольких записей
     val testConfig: Map<String, String> = mapOf(
         "browserType" to "Chrome",
         "headless" to "true",
@@ -245,21 +245,21 @@ fun main() {
     )
 
     val cleanedConfig = testConfig - listOf(
-        "debugMode", "headless)
-
+        "debugMode", "headless")
 
         // 20. Отчёт — список строк "Test ID: результат"
-    val testRes: Map < String, String> = mapOf(
+ val testRes: Map<String, String> = mapOf(
     "Test 1" to "passed",
     "Test 2" to "failed",
     "Test 3" to "passed",
     "Test 4" to "skipped"
     )
 
-    val report: List<String> = testRes.map { (id, result) -> "Test $id: $result" }
+
+    val report: List<String> = testRes.map { "${it.key}: ${it.value}" }
+
     report.forEach { println(it) }
     println()
-
 
     // 21 Преобразовать изменяемый словарь в неизменяемый
 
@@ -309,7 +309,7 @@ fun main() {
         println("Ошибок  нет  успешно!")
     } else
         println("Обнаружены ошибки: $compilationErrors")
-}
+
 
 
 
@@ -321,7 +321,7 @@ val loadTestResults: Map<String, String> = mapOf(
     "sc2" to "passed",
     "sc3" to "failed"
 )
-if (loadTestResults.isNotEmpty()) { println("Не пуст") } else { println("Пуст") }
+if (loadTestResults.isNotEmpty()) println("Не пуст") else println("Пуст")
 
 
 
@@ -345,9 +345,9 @@ val anydResults: Map<String, String> = mapOf(
     "testCheckout" to "passed"
 )
 
-val hasFailed = someResults.any { it.value == "failed" }
 
-println("Есть ли упавшие тесты: $hasFailed")
+val hasFailed = anydResults.any { it.value == "failed" }
+
 
 
 // Задача 28: Неудачные тесты, содержащие "optional" в названии
@@ -357,8 +357,7 @@ val serviceTestResults: Map<String, String> = mapOf(
     "testOptionalFeature" to "failed"
 )
 
-val failedOptionalTests = serviceTestResults.filter { (name, status) ->
-    status != "passed" && name.contains("optional", ignoreCase = true)
+val failedOptionalTests = serviceTestResults.filter {
+    it.value != "passed" && it.key.contains("optional", ignoreCase = true)
 }
-println("Неудачные тесты: $failedOptionalTests")
 }
