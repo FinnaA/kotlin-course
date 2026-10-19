@@ -225,7 +225,7 @@ fun main() {
     lastRunData.clear()
 
 
-    // 18  Исключить тесты со статусом "skipped" из отчёта
+    // 18.  Исключить тесты со статусом "skipped" из отчёта
 
     val fullTestReport: Map<String, String> = mapOf(
         "testLogin" to "passed",
